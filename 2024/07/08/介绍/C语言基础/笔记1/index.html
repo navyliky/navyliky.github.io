@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C语言程序设计-现代方法 读书笔记（一） | Navy的荒岛</title><meta name="author" content="Navy"><meta name="copyright" content="Navy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C语言基础知识点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言程序设计-现代方法 读书笔记（一）">
+<meta property="og:url" content="https://navyliky.github.io.git/2024/07/08/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%AC%94%E8%AE%B01/index.html">
+<meta property="og:site_name" content="Navy的荒岛">
+<meta property="og:description" content="C语言基础知识点">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://navyliky.github.io.git/img/2.png">
+<meta property="article:published_time" content="2024-07-08T13:40:00.000Z">
+<meta property="article:modified_time" content="2024-07-08T09:04:51.776Z">
+<meta property="article:author" content="Navy">
+<meta property="article:tag" content="C语言">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://navyliky.github.io.git/img/2.png"><link rel="shortcut icon" href="/./img/00990.png"><link rel="canonical" href="https://navyliky.github.io.git/2024/07/08/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%AC%94%E8%AE%B01/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C语言程序设计-现代方法 读书笔记（一）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-08 17:04:51'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Navy的荒岛" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjk5z8xWxtM_3z1n0XCv-pTfG0ZKnfVGAKcoG7CvrDHw&amp;s" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/2.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Navy的荒岛"><span class="site-name">Navy的荒岛</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C语言程序设计-现代方法 读书笔记（一）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-08T13:40:00.000Z" title="发表于 2024-07-08 21:40:00">2024-07-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-08T09:04:51.776Z" title="更新于 2024-07-08 17:04:51">2024-07-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C%E8%AF%AD%E8%A8%80/">C语言</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C语言程序设计-现代方法 读书笔记（一）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="background-image: url('/./img/2.png')"></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>学习不是填满水桶，而是点燃火焰！<br>Education is not the filling of a pail but the lighting of a fire.<br>——叶芝 （爱尔兰诗人）</p>
+</blockquote>
+<h2 id="C-语言的历史"><a href="#C-语言的历史" class="headerlink" title="C 语言的历史"></a>C 语言的历史</h2><h3 id="基于C语言"><a href="#基于C语言" class="headerlink" title="基于C语言"></a>基于C语言</h3><ul>
+<li>C++：包括了所有C的特性，但增加了类和其他面向对象编程的特性。</li>
+<li>Java：基于C++的，所以也继承了C的的许多特性。</li>
+<li>C#：是由 C++ 和 Java 发展起来的一种较新的语言。</li>
+<li>Perl：最初是一种复杂的脚本语言，在发展过程中涉及C的许多特性。</li>
+</ul>
+<h3 id="C语言的优缺点"><a href="#C语言的优缺点" class="headerlink" title="C语言的优缺点"></a>C语言的优缺点</h3><ul>
+<li>C语言是一种底层语言。C语言提供了许多机器概念，也提供了与计算机内置指令协调的操作。</li>
+<li>C语言是一种小型语言。C语言很大程度上依赖于标准库。</li>
+<li>C语言是一种包容性的语言。</li>
+</ul>
+<h4 id="C-语言功能"><a href="#C-语言功能" class="headerlink" title="C 语言功能"></a>C 语言功能</h4><ul>
+<li>C 语言是一种汇编语言，它能够将 C 语言程序编译成 C 程序，供计算机使用，是一种非常实用的编程语言。</li>
+<li>可移植。</li>
+<li>功能。</li>
+<li>灵活。</li>
+<li>标准库。</li>
+<li>与 UNIX 系统集成。</li>
+</ul>
+<h4 id="C语言的缺点"><a href="#C语言的缺点" class="headerlink" title="C语言的缺点"></a>C语言的缺点</h4><ol>
+<li>C 程序更容易出错。</li>
+<li>C 程序可能会难以被人阅读和理解。</li>
+<li>C 程序可能会难以修改。</li>
+</ol>
+<h2 id="C语言基本概念"><a href="#C语言基本概念" class="headerlink" title="C语言基本概念"></a>C语言基本概念</h2><p>主要内容有预处理指令、函数、变量和语句。程序需要编译和链接。</p>
+<ul>
+<li>Objective S 是用于存储数据的程序，它的过程可改变数据。</li>
+<li>常量是执行程序的过程不会改变数据。</li>
+</ul>
+<h3 id="编写一个简单的C程序"><a href="#编写一个简单的C程序" class="headerlink" title="编写一个简单的C程序"></a>编写一个简单的C程序</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span> <span class="comment">// 包含了C语言输入输出标准库的相关信息</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> <span class="type">const</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 显示期望信息，printf 函数来自标准输入输出库</span></span><br><span class="line">    <span class="comment">// 产生格式化输出</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;To C, or not to C: that is the question.\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="编译和链接"><a href="#编译和链接" class="headerlink" title="编译和链接"></a>编译和链接</h4><p>将 C 语言程序转化为机器可以执行以下三个步骤：</p>
+<ul>
+<li>预处理：首先程序回被交给预处理器（预处理器）。预处理器执行以#开头的命令（通常称为指令）。预处理器有点类似于编辑器， Func给源代码添加内容，也可以对程序进行修改（简单来说就是将头文件中的代码粘贴进源代码）。</li>
+<li>编译：修改后的程序被找到了编译器（compiler）。这个阶段得到的是一个编译语言写成的文件，本质上还是一个文本文件，文件扩展名.s。</li>
+<li>汇编：汇编器将汇编文件翻译成机器语言指令，并且管理指令打包成一个叫做“可重定位目标程序”的格式，这时得到的文件扩展名为.o。该文件是一个二进制文件。</li>
+<li>链接：链接器（linker）把由编译器产生的目标代码和所需的其他附加代码整合在一起，这样才可执行的程序。</li>
+</ul>
+<h4 id="集成开发环境"><a href="#集成开发环境" class="headerlink" title="集成开发环境"></a>集成开发环境</h4><p>集成开发环境（IDE）是一个软件包（或者就是一个程序，比如Visual Studio），可以在其中编辑、编译、链接、执行甚至调试程序。</p>
+<h3 id="简单程序的一般形式"><a href="#简单程序的一般形式" class="headerlink" title="简单程序的一般形式"></a>简单程序的一般形式</h3><p>简单的C程序一般有如下形式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 指令</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> <span class="type">const</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>C语言程序依赖的三个关键的语言特性：</p>
+<ul>
+<li>指令：在编译前修改程序的编辑命令。</li>
+<li>函数：被命名的可执行代码块，如main函数。</li>
+<li>语句：程序运行时执行的命令。</li>
+</ul>
+<h4 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h4><p>预处理器首先进行编辑。我们把预处理器执行的命令指令。</p>
+<p>所有的指令都是以字符#开始的。这个字符可以把 C 程序中的指令和其他代码区分开来。指令只占一行，每条指令的结尾没有分号或者其他标记。</p>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>函数式编程 类似于 变成中的过程。 它们用来构建程序的模块。C 语言就是函数式编程。</p>
+<p>函数分为两大类：</p>
+<p>程序员自己编写的函数。<br>作为 C 语言实现的一部分提供的函数，也就是库函数。<br>虽然一个 C 程序可以包含多个函数，但是main函数是必须有的。main函数非常特殊：在执行程序时系统会自动调用main函数。</p>
+<h4 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h4><p>语句就是程序运行时执行的代码。比方说上面这个程序使用返回值和调用语句。调用语句就是给一个要执行的函数执行任务。</p>
+<p>C 语言规定每条语句均以分号结尾，因为语句可以连续占用一行，因此不需要分号结尾。</p>
+<h4 id="显示字符串"><a href="#显示字符串" class="headerlink" title="显示字符串"></a>显示字符串</h4><p>目前为止，我们只使用了printf函数显示出的字符串量用一对引号包围的一系列字符。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>每一个程序都应该包含识别信息，C语言把创新信息放在注释中。标记&#x2F;<em>注释的开始，而标记</em>&#x2F;注释的结束。注释不能嵌套。但可以鼓励多行。</p>
+<p>建议男孩建议方式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*****************************</span></span><br><span class="line"><span class="comment"> * Name: pun.c</span></span><br><span class="line"><span class="comment"> * Purpose: Prints a bad pun    // 块注释</span></span><br><span class="line"><span class="comment"> * Author: K. N. King</span></span><br><span class="line"><span class="comment"> *****************************/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Beginning of main program */</span> <span class="comment">// 单行注释</span></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://navyliky.github.io.git">Navy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://navyliky.github.io.git/2024/07/08/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%AC%94%E8%AE%B01/">https://navyliky.github.io.git/2024/07/08/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%AC%94%E8%AE%B01/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://navyliky.github.io.git" target="_blank">Navy的荒岛</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a></div><div class="post_share"><div class="social-share" data-image="/./img/2.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.png" target="_blank"><img class="post-qr-code-img" src="/img/alipay.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/08/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%AC%94%E8%AE%B0%20%E4%BB%A3%E7%A0%811/" title="C语言程序设计-现代方法 代码（一）"><img class="cover" src="/./img/4.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C语言程序设计-现代方法 代码（一）</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/04/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%9F%A5%E8%AF%86%E7%82%B91/" title="指针函数和函数指针"><img class="cover" src="/./img/6.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">指针函数和函数指针</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/01/27/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%801/" title="C语言基础(一)"><img class="cover" src="/./img/hongren.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-27</div><div class="title">C语言基础(一)</div></div></a></div><div><a href="/2024/01/28/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%802/" title="C语言基础(二)"><img class="cover" src="/./img/8.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-28</div><div class="title">C语言基础(二)</div></div></a></div><div><a href="/2024/07/04/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%9F%A5%E8%AF%86%E7%82%B91/" title="指针函数和函数指针"><img class="cover" src="/./img/6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-04</div><div class="title">指针函数和函数指针</div></div></a></div><div><a href="/2024/07/08/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%AC%94%E8%AE%B0%20%E4%BB%A3%E7%A0%811/" title="C语言程序设计-现代方法 代码（一）"><img class="cover" src="/./img/4.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-08</div><div class="title">C语言程序设计-现代方法 代码（一）</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjk5z8xWxtM_3z1n0XCv-pTfG0ZKnfVGAKcoG7CvrDHw&amp;s" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Navy</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/navyliky" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/3461418250@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-number">1.</span> <span class="toc-text">C 语言的历史</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8EC%E8%AF%AD%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">基于C语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">C语言的优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E8%AF%AD%E8%A8%80%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.1.</span> <span class="toc-text">C 语言功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">1.2.2.</span> <span class="toc-text">C语言的缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">C语言基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84C%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.1.</span> <span class="toc-text">编写一个简单的C程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%92%8C%E9%93%BE%E6%8E%A5"><span class="toc-number">2.1.1.</span> <span class="toc-text">编译和链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-number">2.1.2.</span> <span class="toc-text">集成开发环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%B8%80%E8%88%AC%E5%BD%A2%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">简单程序的一般形式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-number">2.2.1.</span> <span class="toc-text">指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.2.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.2.3.</span> <span class="toc-text">语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">2.2.4.</span> <span class="toc-text">显示字符串</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">2.3.</span> <span class="toc-text">注释</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/08/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%AC%94%E8%AE%B0%20%E4%BB%A3%E7%A0%811/" title="C语言程序设计-现代方法 代码（一）"><img src="/./img/4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言程序设计-现代方法 代码（一）"/></a><div class="content"><a class="title" href="/2024/07/08/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%AC%94%E8%AE%B0%20%E4%BB%A3%E7%A0%811/" title="C语言程序设计-现代方法 代码（一）">C语言程序设计-现代方法 代码（一）</a><time datetime="2024-07-08T13:40:00.000Z" title="发表于 2024-07-08 21:40:00">2024-07-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/08/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%AC%94%E8%AE%B01/" title="C语言程序设计-现代方法 读书笔记（一）"><img src="/./img/2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言程序设计-现代方法 读书笔记（一）"/></a><div class="content"><a class="title" href="/2024/07/08/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%AC%94%E8%AE%B01/" title="C语言程序设计-现代方法 读书笔记（一）">C语言程序设计-现代方法 读书笔记（一）</a><time datetime="2024-07-08T13:40:00.000Z" title="发表于 2024-07-08 21:40:00">2024-07-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/04/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%9F%A5%E8%AF%86%E7%82%B91/" title="指针函数和函数指针"><img src="/./img/6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="指针函数和函数指针"/></a><div class="content"><a class="title" href="/2024/07/04/%E4%BB%8B%E7%BB%8D/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E7%9F%A5%E8%AF%86%E7%82%B91/" title="指针函数和函数指针">指针函数和函数指针</a><time datetime="2024-07-04T13:40:00.000Z" title="发表于 2024-07-04 21:40:00">2024-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/02/%E4%BB%8B%E7%BB%8D/IPC/" title="IPC"><img src="/./img/3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IPC"/></a><div class="content"><a class="title" href="/2024/07/02/%E4%BB%8B%E7%BB%8D/IPC/" title="IPC">IPC</a><time datetime="2024-07-02T12:13:00.000Z" title="发表于 2024-07-02 20:13:00">2024-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/29/%E4%BB%8B%E7%BB%8D/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/" title="静态查找"><img src="/./img/baitian.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="静态查找"/></a><div class="content"><a class="title" href="/2024/06/29/%E4%BB%8B%E7%BB%8D/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/" title="静态查找">静态查找</a><time datetime="2024-06-29T13:40:00.000Z" title="发表于 2024-06-29 21:40:00">2024-06-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Navy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer src="/js/cursor.js"></script><script async src="https://npm.elemecdn.com/tzy-blog/lib/js/other/sakura.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Vercel" title=""><img src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于4EVERLAND" title=""><img src="https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js"></script><!-- hexo injector body_end end --></body></html>
